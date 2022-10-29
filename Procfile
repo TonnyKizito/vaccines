@@ -1,0 +1,1 @@
+web: gunicorn Vaccines.wgsi --log-file -

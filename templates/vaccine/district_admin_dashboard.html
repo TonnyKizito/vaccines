@@ -1,0 +1,142 @@
+{% extends 'vaccine/admin_district_base.html' %}
+{% load static %}
+{% block content %}
+{%include 'vaccine/admin_dashboard_cards.html'%}
+<br><br><br><br>
+<div class="container">
+  <div class="row">
+    <div class="panel panel-primary col-md-12" style="margin-left:2%;">
+      <div class="panel-heading" style="text-align:center;">
+        <h5 class="panel-title"> Recent Vaccinators</h5>
+      </div>
+      <table class="table table-hover" id="dev-table">
+	  
+	  <style>
+		table {
+		  border-collapse: collapse;
+		}
+		tr {
+		 border: solid;
+		 border-width: 1px 0;
+		 
+		}
+		
+		
+		th {
+		  background-color: #337ab7;
+		  color: white;
+		}
+		
+		table tr:nth-child(odd){
+		<!-- background: #B8CAE4 -->
+		background: #B8CAE4
+		
+		}
+		
+		
+		table tr:nth-child(even){
+		background: #dae5f4
+		
+		
+		
+		}
+	</style>
+	<script>
+	
+	       <!-- document.addEventListener('click', event => { -->
+		   
+		      <!-- const element = event.target; -->
+			  <!-- if (element.className==='hide') { -->
+			      <!-- element.parentElement.remove(); -->
+			  
+			      
+			  <!-- } -->
+		   
+		   
+		   
+		   <!-- }); -->
+	
+	       
+	<!-- //add a new th with given contents to DOM -->
+	       <!-- function add_th(contents){ -->
+		     <!-- //   create new th -->
+			    <!-- const th = document.createElement('td'); -->
+				<!-- th.className='th'; -->
+				<!-- th.innerHTML = `${contents} <button class = 'hide'>HIDE</button>`; -->
+				
+				<!-- document.querySelector('#th').append(th); -->
+				
+			 
+		   
+		   <!-- }; -->
+	
+	
+	</script>
+	  
+	  
+        <thead>
+          <tr>
+            <th>Vaccinator Name</th>
+            <th>District</th>
+           
+            <th>Mobile</th>
+            <th>Status</th>
+			
+
+          </tr>
+        </thead>
+        {% for d in DA %}
+        <tr>
+          <td> {{d.Full_Name}}</td>
+          <td>{{request.user.username}}</td>
+          <td>{{d.mobile}}</td>
+          {%if d.status%}
+          <td> <span class="label label-primary">Permanent</span></td>
+          {% else %}
+          <td> <span class="label label-success">On Hold</span></td>
+          {% endif %}
+		  <!-- <td><button>HIDE</button></td> -->
+
+        </tr>
+        {% endfor %}
+		
+      </table>
+    </div>
+
+    <!-- <div class="panel panel-primary col-md-5" style="margin-left:5%;">
+      <div class="panel-heading" style="text-align:center;">
+        <h6 class="panel-title">Recent Patient</h6>
+      </div>
+      <table class="table table-hover" id="dev-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Symptoms</th> -->
+            <!-- <th>Mobile</th>
+            <th>Address</th>
+            <th>Status</th>
+
+          </tr>
+        </thead>
+        {% for p in patients %}
+        <tr>
+          <td> {{p.get_name}}</td>
+          <!-- <td>{{p.symptoms}}</td> -->
+          <!-- <td>{{p.mobile}}</td>
+          <td>{{p.address}}</td>
+          {%if p.status%} -->
+          <!-- <td> <span class="label label-primary">Admitted</span></td>
+          {% else %}
+          <td> <span class="label label-success">On Hold</span></td>
+          {% endif %} --> -->
+
+        <!-- </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</div> -->
+
+
+
+{% endblock content %}

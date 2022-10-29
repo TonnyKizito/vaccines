@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>KIZITO || TONNY</title>
+<div> 
+   <br>
+   <br>   
+  <!-- <h1>Welcom!</h1> -->
+ 
+  <!-- <div class="jumbotron" style="margin-bottom: 0px;margin-top: 0px;"> -->
+  <!-- <div class="jumbotron"> -->
+  <!-- <br> -->
+  <!-- <h1 class="display-3 glow">Welcom</h1> -->
+  <!-- <br><br><br><br><br> -->
+  
+</div>
+
+
+</head>
+<body style="background-color: #87CEEB;">
+    <style>
+	    @keyframes move {
+	        from{
+		        left: -20%; 
+            }
+            to{	
+                left: 30%
+            }
+		} 	
+	    h1{
+		  position: relative;
+	      animation-name:move;
+	      animation-duration: 5s;
+	      animation-fill mode:forwards;
+		  animation-iteration-count: infinite;
+		  text-align: center;
+		  background: skyblue;
+		  color: white;
+	   
+	      
+         
+	    }
+	
+	</style>
+	<script>
+	     document.addEventListener('DOMContentLoaded', function(){
+		   
+		    const h1 = document.querySelector('h1');
+			h1.style.animationPlayState = 'paused';
+			
+			document.querySelector('button').onclick = () =>{
+			
+			    if(h1.style.animationPlayState === 'paused') {
+				   h1.style.animationPlayState = 'running';
+				} else {
+                    h1.style.animationPlayState = 'paused';  				
+				}
+			}
+		 });
+	</script>
+    
+
+<body>
+   <h1>Welcom to Vaccines Management System!</h1>
+   <button>Clck here</button>
+   
+  {% include "vaccine/navbar.html" %}
+  {%block content%}
+
+  {%endblock content%}
+  {% include "vaccine/footer.html" %}
+  
+</body>
+
+
+</html>
