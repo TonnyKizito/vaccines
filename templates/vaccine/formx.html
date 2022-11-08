@@ -1,0 +1,272 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.6">
+    <!-- <title>HOME</title> -->
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/navbar-fixed/">
+	
+	  <link href="{% static 'js/jquery-ui-1.12.1/jquery-ui.min.css' %}" rel="stylesheet">
+    <link href="{% static 'js/jquery-ui-1.12.1/jquery-ui.structure.min.css' %}" rel="stylesheet">
+    <link href="{% static 'js/jquery-ui-1.12.1/jquery-ui.theme.min.css' %}" rel="stylesheet">
+  
+ 
+    <!-- Bootstrap core CSS -->
+
+
+    <!--VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-->
+
+    <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxx-->
+	<style>
+    body {
+      background-color: #34eb6b;
+      background-image: url("../img/bg2.jpg");
+      }
+  
+      /*Table paination styling*/
+      .paging-nav {
+      text-align: right;
+      padding-top: 2px;
+      font-size: 20px;
+      padding-bottom: 10px;
+      }
+  
+      /*Align the title to the center of the page*/
+      .table{
+        font-size: 13px;
+        text-align: center;
+        width: 95%;
+        margin: auto;
+        text-align: center;
+      }
+      .mybutton{
+          width: 100%;
+        }
+      /*Make alternating colors for the table rows*/
+      .table tr:nth-child(odd){
+        background: #B8CAE4
+      }
+  
+      .table tr:nth-child(even){
+        background: #dae5f4
+      }
+  
+      th {
+      background-color: #337ab7;
+      color: white;
+      }
+  
+      .display_table{
+        border-bottom-right-radius: 20px;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-bottom: 20px;
+        box-shadow: 12px 12px 10px #2e6da4;
+      }
+  
+  
+      .header {
+        font-family: helvetica;
+        color: #337ab7;
+        font-size: 50px;
+        text-align: center;
+        width: 100%;
+        text-shadow: 6px 6px 6px #c9c6c6;
+        display: block;
+        font-weight: bolder;
+      }
+      .success{
+        list-style: none;
+        background-color: #2e6da4;
+        color: white;
+        box-shadow: 12px 12px 12px #e61c66;
+        text-align: center;
+      }
+  
+      /* Version Button */
+      #version-display{
+        background-color: #e61c66;
+        color: white;
+        box-shadow: 5px 12px 12px #2e6da4;
+        text-align: center;
+        display: inline;
+        font-weight: bolder;
+        padding: 15px;
+        position: fixed;
+        top: 40px;
+        left: -5px;
+        z-index: 3000;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+      }
+      /* Modal Header */
+      .modal-header {
+        padding: 2px 16px;
+        background-color: #e61c66;
+        color: white;
+      }
+  
+      /* Modal Body */
+      .modal-body {padding: 2px 16px;}
+  
+      /* Modal Footer */
+      .modal-footer {
+        padding: 2px 16px;
+        background-color: #e61c66;
+        color: white;
+      }
+  
+      /* Modal Content */
+      .modal-content {
+        position: relative;
+        background-color: #fefefe;
+        margin: auto;
+        padding: 0;
+        border: 1px solid #888;
+        width: 100%;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  
+      }
+  
+  
+      .dev-info{
+        width: 50%;
+        text-align: center;
+        font-family: helvetica;
+        font-weight: bold;
+        display: inline;
+      }
+  
+      .dev-info-logo{
+        width: 50px;
+        float: left;
+      }
+  
+    </style>
+    <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+  
+  
+  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+  
+    
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'js/nprogress/nprogress.css' %}" rel="stylesheet">
+    <link href="{% static 'css/stylesheet.css' %}" rel="stylesheet">
+   
+
+   <!-- Favicons -->
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    
+	<link href="{% static 'css/navbar-top-fixed.css' %}" rel="stylesheet">
+  </head>
+  <body>
+ {% include 'navebar.html' %}
+<main role="main" class="container">
+{% if messages %}
+        <ul class="messages">
+               {% for message in messages %}
+                     <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+               {% endfor %}
+       </ul>
+  {% endif %}
+  <div class="jumbotron">
+    <div class="header">{{header}}</div>
+	
+	
+    
+	<form method='POST' action='/download-form'>{% csrf_token %}
+        {{form|crispy}}
+        <input type="submit" value='Download'/>
+		
+		<a class = 'btn btn-danger' href="/">Cancel</a>
+    </form>
+	
+    <br>
+    <div class="display_table">
+         <table class='table'>
+
+           <thead>
+           
+             <tr>
+               <th>COUNT</th>
+               <!-- <th>ID</th> -->
+               <th>DISTRICT</th>
+               <th>HF</th>
+               <th>VACCINE</th>
+               <!-- <th style="color:white; background-color: red;">PC</th> -->
+               <th>ISSUED QTY</th>
+               <th>ISSUED BY</th>
+               <th>ISSUED TO</th>
+ 
+               <!-- <th>RECEIVED QTY</th> -->
+               <!-- <th>RECEIVED BY</th> -->
+               
+ 
+               <th>TIME STAMP</th>
+             </tr>
+           </thead>
+          {% for instance in queryset %}
+             <tr>
+ 
+               <td>{{forloop.counter}}</td>
+               <!-- <td>{{instance.id}}</td> -->
+               <td>{{instance.district}}</td>
+               <td>{{instance.health_facility}}</td>
+               <td>{{instance.vaccine_name}}</td>
+            
+               <!-- <td>{{instance.quantity}}</td> -->
+               <td>{{instance.issue_quantity}}</td>
+               <td>{{instance.issue_by}}</td>
+               <td>{{instance.issue_to}}</td>
+               
+               <!-- <td>{{instance.receive_quantity}}</td> -->
+               <!-- <td>{{instance.receive_by }}</td> -->
+               
+               <td>{{instance.timestamp}}</td>
+         
+             </tr>
+         {% endfor %}
+       </table>
+     </div>
+     </div>
+ </main>
+ </body>
+     <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+     <script src="{% static 'js/jquery-ui-1.12.1/jquery-ui.min.js' %}"></script>
+     <script src="{% static '/js/bootstrap.bundle.main.js' %}"></script>
+     <script src="{% static 'js/pager/paging.js' %}"></script>
+     <script src="{% static 'js/nprogress/nprogress.js' %}"></script>
+     <script src="{% static 'js/myjs.js' %}"></script>
+ 
+     <script src="../../dist/js/bootstrap.bundle.min.js"></script>
+ 
+     
+     
+    
+ </html>
