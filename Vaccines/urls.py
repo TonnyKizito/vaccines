@@ -186,15 +186,72 @@ urlpatterns += [
 
     
     path('update_items/<str:pk>/', views.update_items, name="update_items"),
+
+
+    path('update_items_district/<str:pk>/', views.update_items_district, name="update_items_district"),
+
+
+
+
+    path('update_items_facility/<str:pk>/', views.update_itemsx, name="update_items_facility"),
+
+
+
     path('delete_items/<str:pk>/', views.delete_items, name="delete_items"),
+
+    path('delete_items_facility/<str:pk>/', views.delete_itemsf, name="delete_items_facility"),
+
+    path('delete_itemsD/<str:pk>/', views.delete_itemsDD, name="delete_itemsD"),
+
+
     path('stock_detail/<str:pk>/', views.stock_detail, name="stock_detail"),
+
+
+     path('stock_detailx/', views.stock_detailx, name="stock_detailx"),
+
+
+
     path('issue_items/<str:pk>/', views.issue_items, name="issue_items"),
+
+    path('issue_vaccines/', views.issue_itemsx, name="issue_vaccines"),
+     
+
+
+
+
     path('reorder_level/<str:pk>/', views.reorder_level, name="reorder_level"),
     path('receive_items/<str:pk>/', views.receive_items, name="receive_items"),
-    path('list_history/', views.list_history, name='list_history'),
+    
+    path('list_history/', views.your_view, name='list_history'),
+
+
+     path('list_historyd/', views.your_viewd, name='list_historyd'),
+
+     path('list_historyN/', views.your_viewN, name='list_historyN'),
+
+
+
+     path('search1/', views.search11, name='search1'),
+
+     path('search2/', views.search22, name='search2'),
+
+     path('search3/', views.search33, name='search3'),
+
+     path('search4/', views.search44, name='search4'),
+
+
+
+
+
+
+    path('download-form', views.your_view2,name='download-form'),
+
+   
+
+    # path('list_history/', views.list_history, name='list_history'),
+
 
     # path('list_history1/', views.list_history1, name='list_history1'),
-
 
     path('update_vaccine/<str:pk>/', views.update_vaccines, name="update_vaccine"),
     
