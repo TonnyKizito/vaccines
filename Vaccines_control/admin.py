@@ -27,3 +27,9 @@ class StockHistoryAdmin(admin.ModelAdmin):
 admin.site.register(StockHistory, StockHistoryAdmin)
 
 
+
+class IssueAdmin(admin.ModelAdmin):
+    pass
+admin.site.register(Issue, IssueAdmin)
+
+
